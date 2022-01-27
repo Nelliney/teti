@@ -1,0 +1,100 @@
+/* basic styling */
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1.125rem;
+}
+header,
+nav,
+main,
+aside,
+footer {
+  padding: 1rem;
+}
+header {
+  background: #96ceb4;
+}
+nav {
+  background-color: #ff6f69;
+  padding-left: 0;
+  padding-right: 0;
+}
+main {
+  background: #ffcc5c;
+}
+aside {
+  background: #ccc;
+}
+footer {
+  background: #88d8b0;
+}
+h1 {
+  text-align: center;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+li {
+  margin: auto;
+}
+a {
+  color: white;
+  font: bold 1rem/1 sans-serif;
+}
+
+/* end basic styling */
+
+
+/* default minimal layout styles  -  mobile */
+
+nav {
+  /* make the nav stick to bottom of screen 
+    for easy access with thumb on smartphones */
+  position: fixed;
+  z-index: 0;
+  width: 100vw;
+  bottom: 0;
+}
+.wrapper {
+  /* make room so footer isn't covered by nav */
+  padding-bottom: 3rem;
+}
+
+/* style orverrides for widescreen layout */
+
+@media screen and (min-width: 600px) {
+
+  body {
+    font-size: 1rem;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    padding-bottom: 0;
+  }
+  h1 {
+    text-align: left;
+  }
+  header {
+    grid-column: 1 / span 12;
+  }
+  nav {
+    position: static;
+    width: auto;
+    grid-column: 1 / span 12;
+  }
+  main {
+    grid-column: 1 / span 9;
+  }
+  aside {
+    grid-column: 10 / span 3;
+  }
+  footer {
+    grid-column: 1 / span 12;
+  }
+}
